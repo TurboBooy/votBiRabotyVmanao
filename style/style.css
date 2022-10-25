@@ -1,0 +1,279 @@
+/*Обнуление*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+ }
+ 
+ *, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+ 
+ :focus, :active {
+	outline: none;
+ }
+ 
+ a:focus, a:active {
+	outline: none;
+ }
+ 
+ nav, footer, header, aside {
+	display: block;
+ }
+ 
+ html, body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+ }
+ 
+ input, button, textarea {
+	font-family: inherit;
+ }
+ 
+ input::-ms-clear {
+	display: none;
+ }
+ 
+ button {
+	cursor: pointer;
+ }
+ 
+ button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+ }
+ 
+ a, a:visited {
+	text-decoration: none;
+ }
+ 
+ a:hover {
+	text-decoration: none;
+ }
+ 
+ ul li {
+	list-style: none;
+ }
+ 
+ img {
+	vertical-align: top;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+	font-size: inherit;
+	font-weight: inherit;
+ }
+
+ .wrapper {
+	display: grid;
+	min-height: 100vh;
+	grid-template: minmax(150px, auto) 1fr minmax(0px, auto) / 1fr;
+	grid-template-areas: 
+	"header"
+	"main"
+
+ }
+
+ [class*="__container"] {
+	width: min(100% - 2rem, 1137px);
+	margin-inline: auto;
+ }
+ .header {
+	position: absolute;
+	grid-area: header;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: header 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+/*
+@keyframes header {
+	0% {
+		top: -10%;
+		opacity: 0%;
+	}
+
+	80% {
+		opacity: 100%;
+	}
+
+	100% {
+		top: 0;
+	}
+}*/
+.header__container {
+	display: flex;
+	min-height: 114px;
+	align-items: center;
+}
+.header__logo-img img {
+	height: auto;
+	max-width: 4rem;
+	min-width: 4rem;
+	width: 100%;
+}
+.header__menu {
+	flex: 1 1 auto;
+}
+.menu {
+	display: flex;
+	justify-content: space-around;
+	padding: 0px;
+}
+
+.menu__list {
+	display: flex;
+}
+.menu__item {
+	margin: 0 40px 0 0;
+}
+.button__list._active {
+	display: block;
+}
+.menu._active .button__list {
+	display: grid;
+	grid-auto-flow: column;
+	margin: 20px auto;
+	grid-template: 1fr 1fr / repeat(3,200px);
+	animation: menu .9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+@keyframes menu {
+	0% {
+		top: 20px;
+		opacity: 0%;
+	}
+
+	80% {
+		opacity: 100%;
+	}
+
+	100% {
+		top: 50px
+	}
+}
+.button__list {
+	position: absolute;
+	margin: 15px 0;
+	background-color: #ffffff;
+	padding: 40px 40px 0px 10px;
+	z-index: 1;
+}
+.button__list li:not(:last-child) {
+	margin: 8px 0px 15px 0px;
+}
+.button__link {
+	color: rgb(12, 12, 12);
+	font-size: 16px;
+}
+
+.menu._active .menu__button span:first-child {
+	display: none;
+}
+.menu__link {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.85rem;
+	line-height: 1.2;
+	color: rgb(14, 14, 14);
+	letter-spacing: 1px;
+	transition: 0.15s;
+}
+.menu__link:hover, .button__link:hover {
+	color: rgb(103, 14, 185);
+	background-color: #ffffff;
+}
+.header__button {
+	font-size: 1.2em;
+	border-radius: 21px;
+	border: 1px solid rgb(126, 41, 114);
+	padding: 12px 30px;
+	background-color: rgb(255, 255, 255);
+	transition: 0.23s;
+}
+.header__button:hover {
+	background: linear-gradient(to bottom right, blue, pink);
+	color: white;
+	border:1px solid rgb(255, 255, 255);
+}
+
+.main {
+	grid-area: main;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(120deg, #05078d 13.07%, #922999 85.2%) 50% no-repeat;
+}
+
+.main__container {
+	margin-top: 50px;
+	display: grid;
+	grid-auto-flow:dense;
+	grid-template-columns: 46% 54%;
+}
+.title {
+	font-size: 4rem;
+	color: rgb(202, 204, 206);
+}
+.under__title {
+	font-size: 24px;
+	opacity: 0.8;
+	margin-left: 13px;
+	color: antiquewhite;
+}
+.contact__menu {
+color: antiquewhite;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	font-size: 18px;
+}
+.contact {
+}
+.contact__title {
+	font-size: 1rem;
+	opacity: 0.5;
+}
+.forma span {
+	color: red;
+	margin-left: 13px;
+}
+.form__list {
+
+}
+.form__item {
+	background: inherit;
+	color: aliceblue;
+	margin: 15px ;
+	padding: 20px 20px;
+	border-radius: 5px;
+	border: 1px solid rgba(182, 182, 182, 0.582);
+}
+
+.submit {
+	border-radius: 35px;
+	padding: 20px 40px;
+	color: rgb(8, 8, 8);
+	font-size: 1.5rem;
+	transition: 0.20s;
+	background-color: aliceblue;
+}
+
+.form__item:hover {
+	border: 1px solid rgb(255, 255, 255);
+	box-shadow: 1px 1px white;
+}
+.submit:hover{
+	background-color: inherit;
+	color: aliceblue;
+}
+
+
+
